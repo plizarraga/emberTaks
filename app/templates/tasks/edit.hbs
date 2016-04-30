@@ -1,0 +1,17 @@
+<form action="">
+	<div class="form-group">
+		<label>Title</label>
+		{{input type="text" class="form-control" value=model.title placeholder="Add Task Name..."}}
+	</div>
+	
+	<div class="form-group">
+		<label>Due Date</label>
+		{{pikaday-input class="form-control" value=model.date format="DD/MM/YYYY"}}
+	</div>
+	
+	<div class="form-group">
+		<label>Description</label>
+		{{textarea class="form-control" value=model.description placeholder="Describe Task..."}}
+	</div>
+	<button {{action 'editTask' model.id}} class="btn btn-primary">Submit</button>
+</form>

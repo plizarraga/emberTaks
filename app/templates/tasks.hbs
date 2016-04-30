@@ -3,8 +3,9 @@
 
 {{#each model as |task|}}
 	<div class="well">
-		<h4>{{task.title}}</h4>
+		<h4>{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
 		<small>Due: {{formatDate task.date}}</small>
 		<p>{{task.description}}</p>
+		<button {{action 'deleteTask' task.id}} class="btn btn-danger">Delete</button>
 	</div>
 {{/each}}
