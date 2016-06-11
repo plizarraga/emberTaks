@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 			this.store.findRecord("task", id).then(function(task){
 				task.deleteRecord();
 				task.save();
-			})
+			});
 		}
 	}
 });
