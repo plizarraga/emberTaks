@@ -1,17 +1,24 @@
-<form action="">
-	<div class="form-group">
-		<label>Title</label>
-		{{input type="text" class="form-control" value=model.title placeholder="Add Task Name..."}}
-	</div>
-	
-	<div class="form-group">
-		<label>Due Date</label>
-		{{pikaday-input class="form-control" value=model.date format="DD/MM/YYYY"}}
-	</div>
-	
-	<div class="form-group">
-		<label>Description</label>
-		{{textarea class="form-control" value=model.description placeholder="Describe Task..."}}
-	</div>
-	<button {{action 'editTask' model.id}} class="btn btn-primary">Submit</button>
-</form>
+<br>
+<div class="row">
+	<form class="col s12 offset-l3" action="">
+		<div class="row">
+			<div class="input-field col l6 s12">
+				{{input type="text" class="form-control" value=model.title }}
+				<label class="active">Task Nombre</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col l6 s12">
+				{{pikaday-input class="form-control" value=model.date format="DD/MM/YYYY"}}
+				<label class="active">Fecha</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col l6 s12">
+				{{textarea class="materialize-textarea" value=model.description}}
+				<label class="active">Descripción</label>
+			</div>
+		</div>
+		<button {{action 'editTask' model.id}} class="btn btn-primary">Editar</button>
+	</form>
+</div>

@@ -1,0 +1,18 @@
+<h1>Tasks List</h1>
+{{#each model as |task|}}
+<div class="row">
+	<div class="col s12">
+		<div class="card">
+			<div class="card-content black-text">
+				<span class="card-title">{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</span>
+				<p><small>Fecha: {{formatDate task.date}}</small></p>
+				<p>{{task.description}}</p>
+			</div>
+			<div class="card-action">
+				{{#link-to 'tasks.edit' task.id}}Editar{{/link-to}}
+				<a href="#" {{action "deleteTask" task.id}}>Eliminar</a>
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}

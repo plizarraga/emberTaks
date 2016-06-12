@@ -3,6 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	actions:{
 		addTask: function(){
+			var self = this;
+
 			var title = this.get('title');
 			var date = this.get('date');
 			var description = this.get('description');
@@ -16,6 +18,7 @@ export default Ember.Controller.extend({
 
 			// Save to Database
 			newTask.save();
+			self.transitionToRoute('tasks.index');
 
 			// Clear form
 			this.setProperties({

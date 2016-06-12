@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
 				//Save to Database
 				task.save();
 
-				self.transitionToRoute('tasks');
+				self.transitionToRoute('tasks.index');
 			});
 		}
 	}
